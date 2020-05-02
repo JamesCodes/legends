@@ -17,7 +17,7 @@ export const IndexPageTemplate = ({
   ...rest
 }) => (
   <div>
-    {console.log({rest})}
+    {console.log({ rest })}
     <Splash
       image={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
     />
@@ -67,6 +67,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  console.log({ frontmatter });
 
   return (
     <Layout>
@@ -106,25 +107,14 @@ export const pageQuery = graphql`
           }
         }
         heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
         description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
+        serviceInformation {
           heading
           description
+          services {
+            name
+            cost
+          }
         }
       }
     }
