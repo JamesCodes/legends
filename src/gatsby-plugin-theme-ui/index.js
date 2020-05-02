@@ -2,6 +2,7 @@ import preset from "@rebass/preset";
 import merge from "lodash/merge";
 
 export default merge({}, preset, {
+  breakpoints: ["599px", "600px", "900px", "1200px", "1800px"],
   colors: {
     text: "#333",
     background: "#fff",
