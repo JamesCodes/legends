@@ -23,7 +23,8 @@ const Footer = class extends React.Component {
           width="100%"
           height="600px"
           style={{ border: "none" }}
-        ></iframe>
+          title="location"
+        />
         <div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
             <div className="columns">
