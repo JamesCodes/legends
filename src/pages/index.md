@@ -54,7 +54,11 @@ serviceInformation:
   description: Below you can find our list of base services which can be combined
     any way you like. If there is something you need that isn't listed, don't
     hesitate to reach out, we will accommodate your every need.
-  services: []
+  services:
+    - name: Full Monty
+      cost: "39"
+    - name: Kids Cut
+      cost: "15"
 main:
   heading: Great coffee with no compromises
   description: >
