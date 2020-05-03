@@ -3,54 +3,30 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
 import Splash from "../components/molecules/Splash";
+import { Container, Text } from "theme-ui";
 
 export const IndexPageTemplate = ({
   image,
   title,
   heading,
-  subheading,
-  mainpitch,
   description,
-  intro,
   ...rest
 }) => (
-  <div>
+  <>
     {console.log({ rest })}
     <Splash
       image={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
     />
-    {/* <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> */}
-  </div>
+    <Container py={5}>
+      <Text as="h1" variant="styles.h1">
+        {heading}
+      </Text>
+      <Text as="p" variant="styles.p">
+        {description}
+      </Text>
+    </Container>
+  </>
 );
 
 IndexPageTemplate.propTypes = {
@@ -75,10 +51,8 @@ const IndexPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
-        intro={frontmatter.intro}
+        serviceInformation={frontmatter.serviceInformation}
       />
     </Layout>
   );

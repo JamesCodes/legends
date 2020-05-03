@@ -70,7 +70,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       heading: String
       description: String
-      serviceInformation: [ServiceInformation]
+      serviceInformation: ServiceInformation
     }
     type ServiceInformation {
       heading: String
