@@ -10,7 +10,7 @@ const DefinitionList = ({ definitions }) => {
         width: "100%",
         maxWidth: 768,
         margin: "0 auto",
-        mt: 4,
+        mt: [4, 4, 4, 4, 5],
       }}
     >
       {definitions.map(({ title, definition }) => (

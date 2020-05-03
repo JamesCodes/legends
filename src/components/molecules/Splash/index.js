@@ -48,7 +48,7 @@ const Splash = ({ children, image }) => {
         backgroundSize: "cover",
       }}
     >
-      <animated.div style={bgProps}>
+      <animated.div style={{ ...bgProps, boxShadow: "inset 0 0 250px #0F0F0F" }}>
         <Flex
           sx={{
             height: "100vh",
@@ -73,7 +73,7 @@ const Splash = ({ children, image }) => {
                   height: "100%",
                   justifyContent: "center",
                   alignItems: "center",
-                  flexWrap: 'wrap'
+                  flexWrap: "wrap",
                 }}
               >
                 <svg
@@ -82,7 +82,7 @@ const Splash = ({ children, image }) => {
                   height="316"
                   viewBox="0 0 270 316"
                   sx={{
-                    width: ["160px", "200px", "220px", "380px", "280px"],
+                    width: ["160px", "200px", "220px", "280px", "280px"],
                     height: "auto",
                   }}
                 >

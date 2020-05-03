@@ -30,7 +30,7 @@ export default merge({}, preset, {
   },
   layout: {
     container: {
-      maxWidth: 1780,
+      maxWidth: 1440,
       px: [4, 4, 5, 5, 5],
     },
   },
@@ -41,7 +41,7 @@ export default merge({}, preset, {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   styles: {
     h1: {
-      fontSize: [2, 2, 2, 5, 5],
+      fontSize: [2, 2, 2, 4, 4],
       lineHeight: 1.25,
       m: 0,
       fontWeight: 'heading',
@@ -49,13 +49,13 @@ export default merge({}, preset, {
       textTransform: 'uppercase',
     },
     h2: {
-      fontSize: [2, 2, 3, 4, 5],
+      fontSize: [2, 2, 2, 3, 4],
       lineHeight: 1.25,
-      mb: 3,
+      mb: [3, 3, 3, 3, 4],
       fontWeight: 'heading'
     },
     p: {
-      fontSize: [0, 2, 3, 3, 3],
+      fontSize: [0, 1, 1, 1, 2],
       lineHeight: 1.45,
       mb: 3,
     },

@@ -22,24 +22,26 @@ export const IndexPageTemplate = ({
     <Splash
       image={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
     >
-      <Container pt={3} pb={4}>
-        <Box mb={5}>
-          <Divider />
-          <Box mt={4} mb={3}>
-            <Text as="h1" variant="styles.h1" pb={2}>
-              {heading}
-            </Text>
+      <Box sx={{ width: "100%" }}>
+        <Container pt={[3, 4, 4, 4, 4]} pb={4}>
+          <Box mb={5}>
+            <Divider />
+            <Box mt={4} mb={3}>
+              <Text as="h1" variant="styles.h1" pb={2}>
+                {heading}
+              </Text>
+            </Box>
+            <Divider pattern={DividerPatterns.TITLE} />
           </Box>
-          <Divider pattern={DividerPatterns.TITLE} />
-        </Box>
-        {/* <Text as="p" variant="styles.p">
+          {/* <Text as="p" variant="styles.p">
           {description}
         </Text> */}
-      </Container>
+        </Container>
+      </Box>
     </Splash>
 
     {serviceInformation && (
-      <Container mt={5}>
+      <Container mt={[5, 5, 5, 5, 6]}>
         <Box>
           {serviceInformation.heading && (
             <Text as="h2" variant="styles.h2">
@@ -63,7 +65,7 @@ export const IndexPageTemplate = ({
       </Container>
     )}
 
-    <Container sx={{ opacity: 0.5 }} py={5}>
+    <Container sx={{ opacity: 0.5 }} py={[5, 5, 5, 5, 6]}>
       <Divider />
     </Container>
 
@@ -91,14 +93,14 @@ export const IndexPageTemplate = ({
       </Container>
     )}
 
-    <Container sx={{ opacity: 0.5 }} py={5}>
+    <Container sx={{ opacity: 0.5 }} py={[5, 5, 5, 5, 6]}>
       <Divider />
     </Container>
 
     {location && (
       <>
         <Container>
-          <Box pb={3}>
+          <Box pb={[3, 3, 3, 3, 5]}>
             {location.heading && (
               <Text as="h2" variant="styles.h2">
                 {location.heading}

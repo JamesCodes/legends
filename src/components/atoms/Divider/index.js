@@ -42,7 +42,7 @@ const Divider = ({ pattern }) => {
     <Flex
       sx={{
         justifyContent: "center",
-        "> svg": { width: "100%", height: "auto", maxWidth: 768 },
+        "> svg": { width: "100%", height: "auto", maxWidth: [280, 300, 300, 600, 600] },
       }}
     >
       {pattern}
