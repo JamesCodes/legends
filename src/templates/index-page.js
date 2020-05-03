@@ -3,29 +3,123 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
+import Divider, { DividerPatterns } from "../components/atoms/Divider";
 import Splash from "../components/molecules/Splash";
-import { Container, Text } from "theme-ui";
+import { Box, Container, Text } from "theme-ui";
+import DefinitionList from "../components/molecules/DefinitionList";
 
 export const IndexPageTemplate = ({
   image,
   title,
   heading,
   description,
+  serviceInformation,
+  location,
+  openHours,
   ...rest
 }) => (
   <>
-    {console.log({ rest })}
     <Splash
       image={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
-    />
-    <Container py={5}>
-      <Text as="h1" variant="styles.h1">
-        {heading}
-      </Text>
-      <Text as="p" variant="styles.p">
-        {description}
-      </Text>
+    >
+      <Container pt={3} pb={4}>
+        <Box mb={5}>
+          <Divider />
+          <Box mt={4} mb={3}>
+            <Text as="h1" variant="styles.h1" pb={2}>
+              {heading}
+            </Text>
+          </Box>
+          <Divider pattern={DividerPatterns.TITLE} />
+        </Box>
+        {/* <Text as="p" variant="styles.p">
+          {description}
+        </Text> */}
+      </Container>
+    </Splash>
+
+    {serviceInformation && (
+      <Container mt={5}>
+        <Box>
+          {serviceInformation.heading && (
+            <Text as="h2" variant="styles.h2">
+              {serviceInformation.heading}
+            </Text>
+          )}
+          {serviceInformation.description && (
+            <Text as="p" variant="styles.p">
+              {serviceInformation.description}
+            </Text>
+          )}
+          {serviceInformation.services &&
+            serviceInformation.services.length && (
+              <DefinitionList
+                definitions={serviceInformation.services.map(
+                  ({ name: title, cost }) => ({ title, definition: `£${cost}` })
+                )}
+              />
+            )}
+        </Box>
+      </Container>
+    )}
+
+    <Container sx={{ opacity: 0.5 }} py={5}>
+      <Divider />
     </Container>
+
+    {openHours && (
+      <Container>
+        <Box>
+          {openHours.heading && (
+            <Text as="h2" variant="styles.h2">
+              {openHours.heading}
+            </Text>
+          )}
+          {openHours.description && (
+            <Text as="p" variant="styles.p">
+              {openHours.description}
+            </Text>
+          )}
+          {openHours.days && openHours.days.length && (
+            <DefinitionList
+              definitions={openHours.days.map(
+                ({ name: title, hours: definition }) => ({ title, definition })
+              )}
+            />
+          )}
+        </Box>
+      </Container>
+    )}
+
+    <Container sx={{ opacity: 0.5 }} py={5}>
+      <Divider />
+    </Container>
+
+    {location && (
+      <>
+        <Container>
+          <Box pb={3}>
+            {location.heading && (
+              <Text as="h2" variant="styles.h2">
+                {location.heading}
+              </Text>
+            )}
+            {location.description && (
+              <Text as="p" variant="styles.p">
+                {location.description}
+              </Text>
+            )}
+          </Box>
+        </Container>
+        <iframe
+          src="https://snazzymaps.com/embed/235315"
+          width="100%"
+          height="600px"
+          style={{ border: "none" }}
+          title="Our location"
+        ></iframe>
+      </>
+    )}
   </>
 );
 
@@ -33,11 +127,30 @@ IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
   description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
+  serviceInformation: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+    services: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        cost: PropTypes.string,
+      })
+    ),
+  }),
+  location: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+  }),
+  openHours: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+    days: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        hours: PropTypes.string,
+      })
+    ),
   }),
 };
 
@@ -53,6 +166,8 @@ const IndexPage = ({ data }) => {
         heading={frontmatter.heading}
         description={frontmatter.description}
         serviceInformation={frontmatter.serviceInformation}
+        location={frontmatter.location}
+        openHours={frontmatter.openHours}
       />
     </Layout>
   );
@@ -88,6 +203,18 @@ export const pageQuery = graphql`
           services {
             name
             cost
+          }
+        }
+        location {
+          heading
+          description
+        }
+        openHours {
+          heading
+          description
+          days {
+            name
+            hours
           }
         }
       }

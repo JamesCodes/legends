@@ -71,6 +71,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       heading: String
       description: String
       serviceInformation: ServiceInformation
+      location: Location
+      openHours: OpenHours
     }
     type ServiceInformation {
       heading: String
@@ -80,6 +82,19 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Service {
       name: String
       cost: String
+    }
+    type Location {
+      heading: String
+      description: String
+    }
+    type OpenHours {
+      heading: String
+      description: String
+      days: [Day]
+    }
+    type Day {
+      name: String
+      hours: String
     }
   `;
   createTypes(typeDefs);

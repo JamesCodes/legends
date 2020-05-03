@@ -15,22 +15,22 @@ export default merge({}, preset, {
     monospace: "Menlo, monospace",
   },
   fontSizes: [
-    "0.422rem",
-    "0.563rem",
-    "0.75rem",
-    "1.777rem",
-    "2.369rem",
-    "3.157rem",
-    "4.209rem",
+    "1.25rem",
+    "2rem",
+    "2.5rem",
+    "3.125rem",
+    "3.90625rem",
+    "4.88281rem",
+    "6.10352rem",
   ],
   fontWeights: {
-    body: 400,
+    body: 300,
     heading: 700,
     bold: 700,
   },
   layout: {
     container: {
-      maxWidth: 1440,
+      maxWidth: 1780,
       px: [4, 4, 5, 5, 5],
     },
   },
@@ -41,12 +41,21 @@ export default merge({}, preset, {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   styles: {
     h1: {
-      fontSize: [4, 2, 3, 4, 7],
+      fontSize: [2, 2, 2, 5, 5],
       lineHeight: 1.25,
-      mb: 4,
+      m: 0,
+      fontWeight: 'heading',
+      textAlign: 'center',
+      textTransform: 'uppercase',
+    },
+    h2: {
+      fontSize: [2, 2, 3, 4, 5],
+      lineHeight: 1.25,
+      mb: 3,
+      fontWeight: 'heading'
     },
     p: {
-      fontSize: [3, 2, 3, 4, 7],
+      fontSize: [0, 2, 3, 3, 3],
       lineHeight: 1.45,
       mb: 3,
     },

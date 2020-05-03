@@ -4,7 +4,7 @@ import { Box, Flex, jsx } from "theme-ui";
 import { useChain, animated, useSpring } from "react-spring";
 import debounce from "lodash/debounce";
 
-const Splash = ({ image }) => {
+const Splash = ({ children, image }) => {
   const bgSpring = useRef();
   const bgProps = useSpring({
     ref: bgSpring,
@@ -33,7 +33,7 @@ const Splash = ({ image }) => {
   const [{ springscrollY }, springsetScrollY] = useSpring(() => ({
     springscrollY: 0,
   }));
-  const parallaxLevel = 20;
+  const parallaxLevel = 10;
   springsetScrollY({ springscrollY: scrollY });
   const interpHeader = springscrollY.interpolate(
     (o) => `translateY(${o / parallaxLevel}px)`
@@ -73,6 +73,7 @@ const Splash = ({ image }) => {
                   height: "100%",
                   justifyContent: "center",
                   alignItems: "center",
+                  flexWrap: 'wrap'
                 }}
               >
                 <svg
@@ -81,7 +82,7 @@ const Splash = ({ image }) => {
                   height="316"
                   viewBox="0 0 270 316"
                   sx={{
-                    width: ["200px", "200px", "220px", "380px", "420px"],
+                    width: ["160px", "200px", "220px", "380px", "280px"],
                     height: "auto",
                   }}
                 >
@@ -111,6 +112,7 @@ const Splash = ({ image }) => {
                     </g>
                   </g>
                 </svg>
+                {children}
               </Flex>
             </animated.div>
           </animated.div>
