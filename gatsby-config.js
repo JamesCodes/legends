@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "The Legends Barbers",
+    title: "The Legend Barbers | Old Street",
     description: "The website for the best barbers in London.",
   },
   plugins: [
@@ -27,6 +27,18 @@ module.exports = {
       options: {
         path: `${__dirname}/src/img`,
         name: "images",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `The Legend Barbers | Old Street`,
+        short_name: `LegendBarbers`,
+        start_url: `/`,
+        background_color: `#0F0F0F`,
+        theme_color: `#E3BA39`,
+        display: `standalone`,
+        icon: `src/img/icon.png`,
       },
     },
     "gatsby-plugin-sharp",

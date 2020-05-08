@@ -1,7 +1,7 @@
 ---
 heading: Cuts, hot towels & wet shaves
 templateKey: index-page
-title: The Legends Barber
+title: The Legend Barber | Old Street
 image: /img/home.png
 description: >-
   Hair cuts, hot towels and wet shaves in a relaxed & friendly atmosphere. With our years of experience and attention to detail, you can be sure to leave feeling sharper and relaxed.
