@@ -7,7 +7,6 @@ import Divider, { DividerPatterns } from "../components/atoms/Divider";
 import Splash from "../components/molecules/Splash";
 import { Box, Container, Text } from "theme-ui";
 import DefinitionList from "../components/molecules/DefinitionList";
-import Fade from "react-reveal/Fade";
 
 export const IndexPageTemplate = ({
   image,
@@ -25,9 +24,9 @@ export const IndexPageTemplate = ({
     >
       <Box sx={{ width: "100%" }}>
         <Container pt={[3, 4, 4, 4, 4]} pb={4}>
-          <Box mb={5}>
+          <Box>
             <Divider />
-            <Box mt={4} mb={3}>
+            <Box mt={[3, 4, 4, 4, 4]} mb={[2, 3, 3, 3, 3]}>
               <Text as="h1" variant="styles.h1" pb={2}>
                 {heading}
               </Text>
@@ -42,32 +41,30 @@ export const IndexPageTemplate = ({
     </Splash>
 
     {serviceInformation && (
-      <Fade left>
-        <Container mt={[5, 5, 5, 5, 6]}>
-          <Box>
-            {serviceInformation.heading && (
-              <Text as="h2" variant="styles.h2">
-                {serviceInformation.heading}
-              </Text>
-            )}
-            {serviceInformation.description && (
-              <Text as="p" variant="styles.p">
-                {serviceInformation.description}
-              </Text>
-            )}
-            {serviceInformation.services && serviceInformation.services.length && (
-              <DefinitionList
-                definitions={serviceInformation.services.map(
-                  ({ name: title, cost }) => ({
-                    title,
-                    definition: `£${cost}`,
-                  })
-                )}
-              />
-            )}
-          </Box>
-        </Container>
-      </Fade>
+      <Container mt={[5, 5, 5, 5, 6]}>
+        <Box>
+          {serviceInformation.heading && (
+            <Text as="h2" variant="styles.h2">
+              {serviceInformation.heading}
+            </Text>
+          )}
+          {serviceInformation.description && (
+            <Text as="p" variant="styles.p">
+              {serviceInformation.description}
+            </Text>
+          )}
+          {serviceInformation.services && serviceInformation.services.length && (
+            <DefinitionList
+              definitions={serviceInformation.services.map(
+                ({ name: title, cost }) => ({
+                  title,
+                  definition: `£${cost}`,
+                })
+              )}
+            />
+          )}
+        </Box>
+      </Container>
     )}
 
     <Container sx={{ opacity: 0.5 }} py={[5, 5, 5, 5, 6]}>
@@ -75,32 +72,30 @@ export const IndexPageTemplate = ({
     </Container>
 
     {openHours && (
-      <Fade right>
-        <Container>
-          <Box>
-            {openHours.heading && (
-              <Text as="h2" variant="styles.h2">
-                {openHours.heading}
-              </Text>
-            )}
-            {openHours.description && (
-              <Text as="p" variant="styles.p">
-                {openHours.description}
-              </Text>
-            )}
-            {openHours.days && openHours.days.length && (
-              <DefinitionList
-                definitions={openHours.days.map(
-                  ({ name: title, hours: definition }) => ({
-                    title,
-                    definition,
-                  })
-                )}
-              />
-            )}
-          </Box>
-        </Container>
-      </Fade>
+      <Container>
+        <Box>
+          {openHours.heading && (
+            <Text as="h2" variant="styles.h2">
+              {openHours.heading}
+            </Text>
+          )}
+          {openHours.description && (
+            <Text as="p" variant="styles.p">
+              {openHours.description}
+            </Text>
+          )}
+          {openHours.days && openHours.days.length && (
+            <DefinitionList
+              definitions={openHours.days.map(
+                ({ name: title, hours: definition }) => ({
+                  title,
+                  definition,
+                })
+              )}
+            />
+          )}
+        </Box>
+      </Container>
     )}
 
     <Container sx={{ opacity: 0.5 }} py={[5, 5, 5, 5, 6]}>
@@ -109,27 +104,25 @@ export const IndexPageTemplate = ({
 
     {location && (
       <>
-        <Fade left>
-          <Container>
-            <Box pb={[3, 3, 3, 3, 5]}>
-              {location.heading && (
-                <Text as="h2" variant="styles.h2">
-                  {location.heading}
-                </Text>
-              )}
-              {location.description && (
-                <Text as="p" variant="styles.p">
-                  {location.description}
-                </Text>
-              )}
-            </Box>
-          </Container>
-        </Fade>
+        <Container>
+          <Box pb={[3, 3, 3, 3, 5]}>
+            {location.heading && (
+              <Text as="h2" variant="styles.h2">
+                {location.heading}
+              </Text>
+            )}
+            {location.description && (
+              <Text as="p" variant="styles.p">
+                {location.description}
+              </Text>
+            )}
+          </Box>
+        </Container>
         <iframe
           src="https://snazzymaps.com/embed/235315"
           width="100%"
           height="600px"
-          style={{ border: "none" }}
+          style={{ border: "none", display: 'block' }}
           title="Our location"
         ></iframe>
       </>

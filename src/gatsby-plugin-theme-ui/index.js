@@ -41,7 +41,7 @@ export default merge({}, preset, {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   styles: {
     h1: {
-      fontSize: [2, 2, 2, 4, 4],
+      fontSize: [1, 1, 1, 2, 4],
       lineHeight: 1.25,
       m: 0,
       fontWeight: 'heading',
