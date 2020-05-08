@@ -1,14 +1,14 @@
 ---
-heading: Cuts, Wet Shaves & Hot Towels
+heading: Clean Cuts, Wet Shaves & Hot Towels
 templateKey: index-page
 title: The Legend Barber | Old Street
-image: /img/home.png
+image: /img/home.jpg
 description: >-
   Hair cuts, hot towels and wet shaves in a relaxed & friendly atmosphere. With our years of experience and attention to detail, you can be sure to leave feeling sharper and relaxed.
 serviceInformation:
   heading: Whatever you need, we can take care of you.
   description:
-    Below you can find our list of base services which can be combined
+    Here is our list of base services which can be combined
     any way you like. If there is something you need that isn't listed, don't
     hesitate to reach out, we will accommodate your every need.
   services:
@@ -28,7 +28,7 @@ serviceInformation:
       cost: "95"
 
 openHours:
-  heading: When to drop in.
+  heading: When we are open and when we are closed.
   description: We offer a walk in only service as we find this is the best way to make as many happy customers as possible.
   days:
     - name: Monday

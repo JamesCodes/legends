@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Divider, { DividerPatterns } from "../components/atoms/Divider";
 import Splash from "../components/molecules/Splash";
-import { Box, Container, Text } from "theme-ui";
+import { Box, Container, Flex, Text } from "theme-ui";
 import DefinitionList from "../components/molecules/DefinitionList";
 
 export const IndexPageTemplate = ({
@@ -26,8 +26,12 @@ export const IndexPageTemplate = ({
         <Container pt={[3, 4, 4, 4, 4]} pb={4}>
           <Box>
             <Divider />
-            <Box mt={[3, 4, 4, 4, 4]} mb={[2, 3, 3, 3, 3]}>
-              <Text as="h1" variant="styles.h1" pb={2}>
+            <Box my={[2, 2, 2, 2, 2]}>
+              <Text
+                as="h1"
+                variant="styles.h1"
+                pt={["0.5rem", "0.5rem", "0.25rem", "0.5rem", "0.75rem"]}
+              >
                 {heading}
               </Text>
             </Box>
@@ -38,90 +42,180 @@ export const IndexPageTemplate = ({
     </Splash>
 
     {serviceInformation && (
-      <Container mt={[5, 5, 5, 5, 6]}>
+      <Container py={[5, 5, 5, 5, 6]}>
         <Box>
+          <Text as="h2" variant="styles.h2">
+            Services
+          </Text>
           {serviceInformation.heading && (
-            <Text as="h2" variant="styles.h2">
+            <Text as="h3" variant="styles.h3">
               {serviceInformation.heading}
             </Text>
           )}
-          {serviceInformation.description && (
-            <Text as="p" variant="styles.p">
-              {serviceInformation.description}
-            </Text>
-          )}
-          {serviceInformation.services && serviceInformation.services.length && (
-            <DefinitionList
-              definitions={serviceInformation.services.map(
-                ({ name: title, cost }) => ({
-                  title,
-                  definition: `£${cost}`,
-                })
+          <Box pt={2} mb={5} sx={{ maxWidth: 400, mx: "auto" }}>
+            <Divider pattern={DividerPatterns.SUBTITLE} />
+          </Box>
+
+          <Flex
+            sx={{
+              flexWrap: "wrap",
+            }}
+          >
+            <Flex
+              sx={{
+                width: ["100%", "100%", "100%", "60%", "60%"],
+                mr: [0, 0, 0, "10%", "10%"],
+                mb: [3, 3, 3, 0, 0],
+                alignItems: "center",
+              }}
+            >
+              {serviceInformation.description && (
+                <Text as="p" variant="styles.p">
+                  {serviceInformation.description}
+                </Text>
               )}
-            />
-          )}
+            </Flex>
+            <Box sx={{ width: ["100%", "100%", "100%", "30%", "30%"] }}>
+              {serviceInformation.services &&
+                serviceInformation.services.length && (
+                  <DefinitionList
+                    definitions={serviceInformation.services.map(
+                      ({ name: title, cost }) => ({
+                        title,
+                        definition: `£${cost}`,
+                      })
+                    )}
+                  />
+                )}
+            </Box>
+          </Flex>
         </Box>
       </Container>
     )}
-
-    <Container sx={{ opacity: 0.5 }} py={[5, 5, 5, 5, 6]}>
-      <Divider />
-    </Container>
 
     {openHours && (
-      <Container>
-        <Box>
-          {openHours.heading && (
+      <Box bg="darkerBackground" py={[5, 5, 5, 5, 6]}>
+        <Container>
+          <Box>
             <Text as="h2" variant="styles.h2">
-              {openHours.heading}
+              Open hours
             </Text>
-          )}
-          {openHours.description && (
-            <Text as="p" variant="styles.p">
-              {openHours.description}
-            </Text>
-          )}
-          {openHours.days && openHours.days.length && (
-            <DefinitionList
-              definitions={openHours.days.map(
-                ({ name: title, hours: definition }) => ({
-                  title,
-                  definition,
-                })
-              )}
-            />
-          )}
-        </Box>
-      </Container>
+            {openHours.heading && (
+              <Text as="h3" variant="styles.h3">
+                {openHours.heading}
+              </Text>
+            )}
+            <Box pt={2} mb={5} sx={{ maxWidth: 400, mx: "auto" }}>
+              <Divider pattern={DividerPatterns.SUBTITLE} />
+            </Box>
+            <Flex
+              sx={{
+                flexWrap: "wrap",
+                flexDirection: [
+                  "column-reverse",
+                  "column-reverse",
+                  "column-reverse",
+                  "row",
+                  "row",
+                ],
+              }}
+            >
+              <Box
+                sx={{
+                  width: ["100%", "100%", "100%", "30%", "30%"],
+                }}
+              >
+                {openHours.days && openHours.days.length && (
+                  <DefinitionList
+                    definitions={openHours.days.map(
+                      ({ name: title, hours: definition }) => ({
+                        title,
+                        definition,
+                      })
+                    )}
+                  />
+                )}
+              </Box>
+              <Flex
+                sx={{
+                  width: ["100%", "100%", "100%", "60%", "60%"],
+                  ml: [0, 0, 0, "10%", "10%"],
+                  mb: [3, 3, 3, 0, 0],
+                  alignItems: "center",
+                }}
+              >
+                {openHours.description && (
+                  <Text as="p" variant="styles.p">
+                    {openHours.description}
+                  </Text>
+                )}
+              </Flex>
+            </Flex>
+          </Box>
+        </Container>
+      </Box>
     )}
-
-    <Container sx={{ opacity: 0.5 }} py={[5, 5, 5, 5, 6]}>
-      <Divider />
-    </Container>
 
     {location && (
       <>
         <Container>
-          <Box pb={[3, 3, 3, 3, 5]}>
-            {location.heading && (
-              <Text as="h2" variant="styles.h2">
+          <Box my={[5, 5, 5, 5, 6]}>
+            <Text as="h2" variant="styles.h2">
+              Location
+            </Text>
+            {openHours.heading && (
+              <Text as="h3" variant="styles.h3">
                 {location.heading}
               </Text>
             )}
-            {location.description && (
-              <Text as="p" variant="styles.p">
-                {location.description}
-              </Text>
-            )}
+            <Box pt={2} mb={5} sx={{ maxWidth: 400, mx: "auto" }}>
+              <Divider pattern={DividerPatterns.SUBTITLE} />
+            </Box>
+
+            <Flex
+              sx={{
+                flexWrap: "wrap",
+                flexDirection: [
+                  "column-reverse",
+                  "column-reverse",
+                  "column-reverse",
+                  "row",
+                  "row",
+                ],
+              }}
+            >
+              <Box
+                sx={{
+                  width: ["100%", "100%", "100%", "60%", "60%"],
+                  mr: [0, 0, 0, "10%", "10%"],
+                  mb: [3, 3, 0, 0, 0],
+                  alignItems: "center",
+                }}
+              >
+                <Box
+                  as="iframe"
+                  src="https://snazzymaps.com/embed/235315"
+                  width="100%"
+                  height={["300px", "300px", "300px", "600px", "600px"]}
+                  sx={{ border: "none", display: "block" }}
+                  title="Our location"
+                />
+              </Box>
+              <Flex
+                sx={{
+                  width: ["100%", "100%", "100%", "30%", "30%"],
+                  alignItems: "center",
+                }}
+              >
+                {location.description && (
+                  <Text as="p" variant="styles.p">
+                    {location.description}
+                  </Text>
+                )}
+              </Flex>
+            </Flex>
           </Box>
         </Container>
-        <iframe
-          src="https://snazzymaps.com/embed/235315"
-          width="100%"
-          height="600px"
-          style={{ border: "none", display: 'block' }}
-          title="Our location"
-        ></iframe>
       </>
     )}
   </>

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { useRef, useState, useEffect } from "react";
-import { Box, Flex, jsx } from "theme-ui";
+import { Flex, jsx } from "theme-ui";
 import { useChain, animated, useSpring } from "react-spring";
 import debounce from "lodash/debounce";
 
@@ -38,17 +38,26 @@ const Splash = ({ children, image }) => {
   const interpHeader = springscrollY.interpolate(
     (o) => `translateY(${o / parallaxLevel}px)`
   );
+  const interpBg = springscrollY.interpolate(
+    (o) => `center -${o / 30}px`
+  );
 
   return (
-    <Box
-      sx={{
+    <animated.div
+      style={{
+        backgroundPosition: interpBg,
         backgroundImage: `url(${image})`,
-        backgroundPosition: `top left`,
         backgroundAttachment: `fixed`,
         backgroundSize: "cover",
       }}
     >
-      <animated.div style={{ ...bgProps, boxShadow: "inset 0 0 250px #0F0F0F" }}>
+      
+      <animated.div
+        style={{
+          ...bgProps,
+          boxShadow: "inset 0 0 250px #0F0F0F",
+        }}
+      >
         <Flex
           sx={{
             height: "100vh",
@@ -118,7 +127,7 @@ const Splash = ({ children, image }) => {
           </animated.div>
         </Flex>
       </animated.div>
-    </Box>
+    </animated.div>
   );
 };
 

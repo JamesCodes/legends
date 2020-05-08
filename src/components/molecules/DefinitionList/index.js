@@ -10,7 +10,6 @@ const DefinitionList = ({ definitions }) => {
         width: "100%",
         maxWidth: 768,
         margin: "0 auto",
-        mt: [4, 4, 4, 4, 5],
       }}
     >
       {definitions.map(({ title, definition }) => (
@@ -28,12 +27,16 @@ const DefinitionList = ({ definitions }) => {
               "0 0 3px",
             ],
             width: "100%",
+
+            "&:last-child": {
+              border: "none",
+            },
           }}
         >
-          <Text as="dt" variant="styles.p" m={0}>
+          <Text as="dt" variant="styles.dl" m={0}>
             {title}:
           </Text>
-          <Text as="dd" variant="styles.p" m={0}>
+          <Text as="dd" variant="styles.dl" m={0}>
             <strong>{definition}</strong>
           </Text>
         </Flex>

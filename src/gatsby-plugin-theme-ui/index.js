@@ -6,7 +6,8 @@ export default merge({}, preset, {
   colors: {
     text: "#E3BA39",
     background: "#0F0F0F",
-    primary: "#639",
+    darkerBackground: "#0A0A0A",
+    primary: "#E3BA39",
     secondary: "#ff6347",
   },
   fonts: {
@@ -50,11 +51,24 @@ export default merge({}, preset, {
     h2: {
       fontSize: [2, 2, 2, 3, 4],
       lineHeight: 1.25,
-      mb: [3, 3, 3, 3, 4],
-      fontWeight: 'heading'
+      mb: [3, 3, 3, 3, 2],
+      fontWeight: 'heading',
+      textAlign: 'center'
+    },
+    h3: {
+      fontSize: [1, 1, 1, 1, 1],
+      lineHeight: 1.25,
+      mb: [3, 3, 3, 3, 3],
+      fontWeight: 'body',
+      textAlign: 'center'
     },
     p: {
-      fontSize: [0, 1, 1, 1, 2],
+      fontSize: [0, 1, 1, 1, 1],
+      lineHeight: 1.45,
+      mb: 3,
+    },
+    dl: {
+      fontSize: [0, 0, 0, 0, 0],
       lineHeight: 1.45,
       mb: 3,
     },
