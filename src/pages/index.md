@@ -1,5 +1,5 @@
 ---
-heading: Cuts, hot towels & wet shaves
+heading: Cuts, Wet Shaves & Hot Towels
 templateKey: index-page
 title: The Legend Barber | Old Street
 image: /img/home.png

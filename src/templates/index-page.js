@@ -33,9 +33,6 @@ export const IndexPageTemplate = ({
             </Box>
             <Divider pattern={DividerPatterns.TITLE} />
           </Box>
-          {/* <Text as="p" variant="styles.p">
-          {description}
-        </Text> */}
         </Container>
       </Box>
     </Splash>

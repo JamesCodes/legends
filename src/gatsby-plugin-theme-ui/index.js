@@ -46,7 +46,6 @@ export default merge({}, preset, {
       m: 0,
       fontWeight: 'heading',
       textAlign: 'center',
-      textTransform: 'uppercase',
     },
     h2: {
       fontSize: [2, 2, 2, 3, 4],
