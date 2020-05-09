@@ -14,6 +14,7 @@ const DefinitionList = ({ definitions }) => {
     >
       {definitions.map(({ title, definition }) => (
         <Flex
+          key={title}
           sx={{
             py: 2,
             justifyContent: "space-between",
