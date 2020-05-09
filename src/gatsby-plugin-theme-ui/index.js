@@ -49,9 +49,9 @@ export default merge({}, preset, {
       textAlign: 'center',
     },
     h2: {
-      fontSize: [2, 2, 2, 3, 4],
+      fontSize: [3, 2, 2, 3, 4],
       lineHeight: 1.25,
-      mb: [3, 3, 3, 3, 2],
+      mb: [2, 3, 3, 3, 2],
       fontWeight: 'heading',
       textAlign: 'center'
     },

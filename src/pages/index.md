@@ -8,7 +8,7 @@ description: >-
 serviceInformation:
   heading: Whatever you need, we can take care of you.
   description:
-    Here is our list of base services which can be combined
+    Here is our list of services which can be combined
     any way you like. If there is something you need that isn't listed, don't
     hesitate to reach out, we will accommodate your every need.
   services:
@@ -46,6 +46,6 @@ openHours:
     - name: Sunday
       hours: "Closed"
 location:
-  heading: Finding us.
+  heading: Where to find us.
   description: You can find us at 106 Old St, London EC1V 9AY.
 ---

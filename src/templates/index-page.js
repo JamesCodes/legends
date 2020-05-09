@@ -26,7 +26,7 @@ export const IndexPageTemplate = ({
         <Container pt={[3, 4, 4, 4, 4]} pb={4}>
           <Box>
             <Divider />
-            <Box my={[2, 2, 2, 2, 2]}>
+            <Box mt={[2, 2, 2, 2, 2]} mb={[3, 2, 2, 2, 2]}>
               <Text
                 as="h1"
                 variant="styles.h1"
@@ -52,7 +52,11 @@ export const IndexPageTemplate = ({
               {serviceInformation.heading}
             </Text>
           )}
-          <Box pt={2} mb={5} sx={{ maxWidth: 400, mx: "auto" }}>
+          <Box
+            pt={[1, 2, 2, 2, 2]}
+            mb={[4, 5, 5, 5, 5]}
+            sx={{ maxWidth: 220, mx: "auto" }}
+          >
             <Divider pattern={DividerPatterns.SUBTITLE} />
           </Box>
 
@@ -105,7 +109,11 @@ export const IndexPageTemplate = ({
                 {openHours.heading}
               </Text>
             )}
-            <Box pt={2} mb={5} sx={{ maxWidth: 400, mx: "auto" }}>
+            <Box
+              pt={[1, 2, 2, 2, 2]}
+              mb={[4, 5, 5, 5, 5]}
+              sx={{ maxWidth: 220, mx: "auto" }}
+            >
               <Divider pattern={DividerPatterns.SUBTITLE} />
             </Box>
             <Flex
@@ -168,7 +176,11 @@ export const IndexPageTemplate = ({
                 {location.heading}
               </Text>
             )}
-            <Box pt={2} mb={5} sx={{ maxWidth: 400, mx: "auto" }}>
+            <Box
+              pt={[1, 2, 2, 2, 2]}
+              mb={[4, 5, 5, 5, 5]}
+              sx={{ maxWidth: 220, mx: "auto" }}
+            >
               <Divider pattern={DividerPatterns.SUBTITLE} />
             </Box>
 

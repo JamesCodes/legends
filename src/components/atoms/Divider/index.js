@@ -64,6 +64,7 @@ const Divider = ({ pattern }) => {
         "> svg": {
           width: "100%",
           height: "auto",
+          maxHeight: '2.8125rem',
           maxWidth: [280, 300, 300, 600, 600],
         },
       }}
